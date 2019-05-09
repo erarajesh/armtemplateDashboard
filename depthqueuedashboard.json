@@ -1,0 +1,399 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "applicationInsightsName":{
+          "type": "string"
+       },
+       "dashboardName":{
+           "type": "string"
+       },
+       "resourceGroupname":{
+           "type": "string"
+       }
+     
+  },
+  "variables": {
+     
+      "subscriptionId":"[subscription().subscriptionId]"
+  },
+  "resources": [
+    {
+        "properties": {
+          "lenses": {
+            "0": {
+              "order": 0,
+              "parts": {
+                "0": {
+                  "position": {
+                    "x": 0,
+                    "y": 0,
+                    "colSpan": 6,
+                    "rowSpan": 4
+                  },
+                  "metadata": {
+                    "inputs": [
+                      {
+                        "name": "sharedTimeRange",
+                        "isOptional": true
+                      },
+                      {
+                        "name": "options",
+                        "value": {
+                          "chart": {
+                            "metrics": [
+                              {
+                                "resourceMetadata": {
+                                  "id": "[concat('/subscriptions/',variables('subscriptionId'),'/resourceGroups/',parameters('resourceGroupname'),'/providers/microsoft.insights/components/',parameters('applicationinsightsName'))]"
+                                },
+                                "name": "amsqueue ActiveMessageCount",
+                                "aggregationType": 4,
+                                "namespace": "azure.applicationinsights",
+                                "metricVisualization": {
+                                  "displayName": "amsqueue ActiveMessageCount",
+                                  "color": "#47BDF5"
+                                }
+                              }
+                            ],
+                            "title": "Avg amsqueue ActiveMessageCount",
+                            "visualization": {}
+                          },
+                          "version": 2
+                        },
+                        "isOptional": true
+                      }
+                    ],
+                    "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                    "settings": {
+                      "content": {
+                        "options": {
+                          "chart": {
+                            "metrics": [
+                              {
+                                "resourceMetadata": {
+                                  "id": "[concat('/subscriptions/',variables('subscriptionId'),'/resourceGroups/',parameters('resourceGroupname'),'/providers/microsoft.insights/components/',parameters('applicationinsightsName'))]"
+                                },
+                                "name": "amsqueue ActiveMessageCount",
+                                "aggregationType": 4,
+                                "namespace": "azure.applicationinsights",
+                                "metricVisualization": {
+                                  "displayName": "amsqueue ActiveMessageCount",
+                                  "color": "#47BDF5"
+                                }
+                              },
+                              {
+                                "resourceMetadata": {
+                                  "id": "[concat('/subscriptions/',variables('subscriptionId'),'/resourceGroups/',parameters('resourceGroupname'),'/providers/microsoft.insights/components/',parameters('applicationinsightsName'))]"
+                                },
+                                "name": "amsqueue DeadLetterMessageCount",
+                                "aggregationType": 4,
+                                "namespace": "azure.applicationinsights",
+                                "metricVisualization": {
+                                  "displayName": "amsqueue DeadLetterMessageCount",
+                                  "color": "#7E58FF"
+                                }
+                              },
+                              {
+                                "resourceMetadata": {
+                                  "id": "[concat('/subscriptions/',variables('subscriptionId'),'/resourceGroups/',parameters('resourceGroupname'),'/providers/microsoft.insights/components/',parameters('applicationinsightsName'))]"
+                                },
+                                "name": "amsqueue ActiveMessageCount",
+                                "aggregationType": 7,
+                                "namespace": "azure.applicationinsights",
+                                "metricVisualization": {
+                                  "displayName": "amsqueue ActiveMessageCount",
+                                  "color": "#44F1C8"
+                                }
+                              },
+                              {
+                                "resourceMetadata": {
+                                  "id": "[concat('/subscriptions/',variables('subscriptionId'),'/resourceGroups/',parameters('resourceGroupname'),'/providers/microsoft.insights/components/',parameters('applicationinsightsName'))]"
+                                },
+                                "name": "amsqueue DeadLetterMessageCount",
+                                "aggregationType": 7,
+                                "namespace": "azure.applicationinsights",
+                                "metricVisualization": {
+                                  "displayName": "amsqueue DeadLetterMessageCount",
+                                  "color": "#EB9371"
+                                }
+                              }
+                            ],
+                            "title": "Avg amsqueue ActiveMessageCount",
+                            "visualization": {
+                              "chartType": 2,
+                              "legendVisualization": {
+                                "isVisible": true,
+                                "position": 2,
+                                "hideSubtitle": false
+                              },
+                              "axisVisualization": {
+                                "x": {
+                                  "isVisible": true,
+                                  "axisType": 3
+                                },
+                                "y": {
+                                  "isVisible": true,
+                                  "axisType": 1
+                                }
+                              },
+                              "disablePinning": true
+                            }
+                          },
+                          "version": 2
+                        }
+                      }
+                    }
+                  }
+                },
+                "1": {
+                  "position": {
+                    "x": 6,
+                    "y": 0,
+                    "colSpan": 6,
+                    "rowSpan": 4
+                  },
+                  "metadata": {
+                    "inputs": [
+                      {
+                        "name": "options",
+                        "isOptional": true
+                      },
+                      {
+                        "name": "sharedTimeRange",
+                        "isOptional": true
+                      }
+                    ],
+                    "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                    "settings": {
+                      "content": {
+                        "options": {
+                          "chart": {
+                            "metrics": [
+                              {
+                                "resourceMetadata": {
+                                  "id": "[concat('/subscriptions/',variables('subscriptionId'),'/resourceGroups/',parameters('resourceGroupname'),'/providers/microsoft.insights/components/',parameters('applicationinsightsName'))]"
+                                },
+                                "name": "exceptions/server",
+                                "aggregationType": 1,
+                                "namespace": "microsoft.insights/components/kusto",
+                                "metricVisualization": {
+                                  "displayName": "Server exceptions",
+                                  "color": "#47BDF5"
+                                }
+                              },
+                              {
+                                "resourceMetadata": {
+                                  "id": "[concat('/subscriptions/',variables('subscriptionId'),'/resourceGroups/',parameters('resourceGroupname'),'/providers/microsoft.insights/components/',parameters('applicationinsightsName'))]"
+                                },
+                                "name": "dependencies/failed",
+                                "aggregationType": 1,
+                                "namespace": "microsoft.insights/components/kusto",
+                                "metricVisualization": {
+                                  "displayName": "Dependency failures",
+                                  "color": "#7E58FF"
+                                }
+                              }
+                            ],
+                            "title": "Server Exceptions and Dependency Failures",
+                            "visualization": {
+                              "chartType": 2,
+                              "legendVisualization": {
+                                "isVisible": true,
+                                "position": 2,
+                                "hideSubtitle": false
+                              },
+                              "axisVisualization": {
+                                "x": {
+                                  "isVisible": true,
+                                  "axisType": 3
+                                },
+                                "y": {
+                                  "isVisible": true,
+                                  "axisType": 1
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "2": {
+                  "position": {
+                    "x": 12,
+                    "y": 0,
+                    "colSpan": 6,
+                    "rowSpan": 4
+                  },
+                  "metadata": {
+                    "inputs": [
+                      {
+                        "name": "options",
+                        "isOptional": true
+                      },
+                      {
+                        "name": "sharedTimeRange",
+                        "isOptional": true
+                      }
+                    ],
+                    "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                    "settings": {
+                      "content": {
+                        "options": {
+                          "chart": {
+                            "metrics": [
+                              {
+                                "resourceMetadata": {
+                                  "id": "[concat('/subscriptions/',variables('subscriptionId'),'/resourceGroups/',parameters('resourceGroupname'),'/providers/microsoft.insights/components/',parameters('applicationinsightsName'))]"
+                                },
+                                "name": "availabilityResults/availabilityPercentage",
+                                "aggregationType": 4,
+                                "namespace": "microsoft.insights/components",
+                                "metricVisualization": {
+                                  "displayName": "Availability",
+                                  "color": "#47BDF5"
+                                }
+                              }
+                            ],
+                            "title": "Average Availability",
+                            "visualization": {
+                              "chartType": 2,
+                              "legendVisualization": {
+                                "isVisible": true,
+                                "position": 2,
+                                "hideSubtitle": false
+                              },
+                              "axisVisualization": {
+                                "x": {
+                                  "isVisible": true,
+                                  "axisType": 3
+                                },
+                                "y": {
+                                  "isVisible": true,
+                                  "axisType": 1
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "3": {
+                  "position": {
+                    "x": 0,
+                    "y": 4,
+                    "colSpan": 6,
+                    "rowSpan": 4
+                  },
+                  "metadata": {
+                    "inputs": [
+                      {
+                        "name": "options",
+                        "isOptional": true
+                      },
+                      {
+                        "name": "sharedTimeRange",
+                        "isOptional": true
+                      }
+                    ],
+                    "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                    "settings": {
+                      "content": {
+                        "options": {
+                          "chart": {
+                            "metrics": [
+                              {
+                                "resourceMetadata": {
+                                  "id": "[concat('/subscriptions/',variables('subscriptionId'),'/resourceGroups/',parameters('resourceGroupname'),'/providers/microsoft.insights/components/',parameters('applicationinsightsName'))]"
+                                },
+                                "name": "exceptions/browser",
+                                "aggregationType": 7,
+                                "namespace": "microsoft.insights/components",
+                                "metricVisualization": {
+                                  "displayName": "Browser exceptions",
+                                  "color": "#47BDF5"
+                                }
+                              }
+                            ],
+                            "title": "Browser Exceptions",
+                            "visualization": {
+                              "chartType": 2,
+                              "legendVisualization": {
+                                "isVisible": true,
+                                "position": 2,
+                                "hideSubtitle": false
+                              },
+                              "axisVisualization": {
+                                "x": {
+                                  "isVisible": true,
+                                  "axisType": 3
+                                },
+                                "y": {
+                                  "isVisible": true,
+                                  "axisType": 1
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "metadata": {
+            "model": {
+              "timeRange": {
+                "value": {
+                  "relative": {
+                    "duration": 24,
+                    "timeUnit": 1
+                  }
+                },
+                "type": "MsPortalFx.Composition.Configuration.ValueTypes.TimeRange"
+              },
+              "filterLocale": {
+                "value": "en-us"
+              },
+              "filters": {
+                "value": {
+                  "MsPortalFx_TimeRange": {
+                    "model": {
+                      "format": "utc",
+                      "granularity": "auto",
+                      "relative": "24h"
+                    },
+                    "displayCache": {
+                      "name": "UTC Time",
+                      "value": "Past 24 hours"
+                    },
+                    "filteredPartIds": [
+                      "StartboardPart-MonitorChartPart-b1adc67b-7ab9-4dde-8d38-3894a59b7784",
+                      "StartboardPart-MonitorChartPart-c67ca3a6-629d-4bed-bbf6-f8bbb32af005",
+                      "StartboardPart-MonitorChartPart-763cfddb-eddc-4538-a72b-ac3a5b26f249",
+                      "StartboardPart-MonitorChartPart-763cfddb-eddc-4538-a72b-ac3a5b26f436",
+                      "StartboardPart-MonitorChartPart-763cfddb-eddc-4538-a72b-ac3a5b26f546",
+                      "StartboardPart-MonitorChartPart-763cfddb-eddc-4538-a72b-ac3a5b26f5e2"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        
+        "name": "[parameters('dashboardName')]",
+        "type": "Microsoft.Portal/dashboards",
+        "location": "centralus",
+        "tags": {
+          "hidden-title": "[parameters('dashboardName')]"
+        },
+        "apiVersion": "2015-08-01-preview"
+      }
+  ]
+}
